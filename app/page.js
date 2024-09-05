@@ -1,113 +1,101 @@
 import Image from "next/image";
+import Head from 'next/head';
+import Link from 'next/link';
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
+    <>
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Perspectives - Fitness, Health, Nutrition, and Watches</title>
+      </Head>
+      <div className="bg-gray-100 font-sans">
+        <header className="bg-green-900 text-white shadow-lg">
+          <nav className="container mx-auto px-6 py-3 flex justify-between items-center">
+            <div className="text-xl font-bold">Perspectives</div>
+            <div>
+              <Link href="/" className="text-white hover:text-blue-200 px-3 py-2">Home</Link>
+              <Link href="/episodes" className="text-white hover:text-blue-200 px-3 py-2">Episodes</Link>
+              <Link href="/about" className="text-white hover:text-blue-200 px-3 py-2">About</Link>
+              <Link href="/" className="text-white hover:text-blue-200 px-3 py-2">Contact</Link>
+            </div>
+          </nav>
+        </header>
+
+        <main className="container mx-auto px-6 py-8">
+          <section className="mb-12">
+            <h1 className="text-4xl font-bold mb-4">Welcome to Perspectives</h1>
+            <p className="text-xl text-gray-700">Your go-to podcast for fitness, health, nutrition, and the latest in wearable technology.</p>
+          </section>
+
+          <section className="mb-12">
+            <h2 className="text-2xl font-semibold mb-4">Latest Episodes</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="bg-white rounded-lg shadow-md p-6">
+                <h3 className="text-xl font-semibold mb-2">The Ultimate HIIT Workout</h3>
+                <p className="text-gray-600 mb-4">Discover the most effective high-intensity interval training techniques.</p>
+                <Link href="/" className="text-blue-600 hover:text-blue-800">Listen now →</Link>
+              </div>
+              <div className="bg-white rounded-lg shadow-md p-6">
+                <h3 className="text-xl font-semibold mb-2">Nutrition Myths Debunked</h3>
+                <p className="text-gray-600 mb-4">We separate fact from fiction in the world of nutrition and dieting.</p>
+                <Link href="/" className="text-blue-600 hover:text-blue-800">Listen now →</Link>
+              </div>
+              <div className="bg-white rounded-lg shadow-md p-6">
+                <h3 className="text-xl font-semibold mb-2">Smartwatches: A Fitness Revolution</h3>
+                <p className="text-gray-600 mb-4">Explore how smartwatches are changing the fitness landscape.</p>
+                <Link href="https://open.spotify.com/show/35ZQq8VFt5PgsIqRT53Gmq" className="text-blue-600 hover:text-blue-800">Listen now →</Link>
+              </div>
+            </div>
+          </section>
+
+          <section className="mb-12">
+            <h2 className="text-2xl font-semibold mb-4">Subscribe</h2>
+            <form className="bg-white rounded-lg shadow-md p-6">
+              <div className="mb-4">
+                <label htmlFor="email" className="block text-gray-700 font-semibold mb-2">Email Address</label>
+                <input type="email" id="email" name="email" className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600" placeholder="you@example.com" required />
+              </div>
+              <button type="submit" className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-opacity-50">Subscribe to Our Newsletter</button>
+            </form>
+          </section>
+        </main>
+
+        <footer className="bg-gray-800 text-white py-8">
+          <div className="container mx-auto px-6">
+            <div className="flex flex-wrap justify-between items-center">
+              <div className="w-full md:w-1/3 mb-6 md:mb-0">
+                <h3 className="text-xl font-semibold mb-2">FitTech Talk</h3>
+                <p className="text-gray-400">Empowering your fitness journey through technology and knowledge.</p>
+              </div>
+              <div className="w-full md:w-1/3 mb-6 md:mb-0">
+                <h4 className="text-lg font-semibold mb-2">Quick Links</h4>
+                <ul className="text-gray-400">
+                  <li><a href="#" className="hover:text-white">Home</a></li>
+                  <li><a href="#" className="hover:text-white">Episodes</a></li>
+                  <li><a href="#" className="hover:text-white">About</a></li>
+                  <li><a href="#" className="hover:text-white">Contact</a></li>
+                </ul>
+              </div>
+              <div className="w-full md:w-1/3">
+                <h4 className="text-lg font-semibold mb-2">Follow Us</h4>
+                <div className="flex space-x-4">
+                  <a href="#" className="text-gray-400 hover:text-white">
+                    <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path fillRule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clipRule="evenodd" />
+                    </svg>
+                  </a>
+                  <a href="#" className="text-gray-400 hover:text-white">
+                    <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path fillRule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.048-1.067-.06-1.407-.06-4.123v-.08c0-2.643.012-2.987.06-4.043.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772 4.902 4.902 0 011.772-1.153c.636-.247 1.363-.416 2.427-.465 1.067-.048 1.407-.06 4.123-.06h.08zm0 1.67c-2.462 0-2.758.01-3.724.054-.957.043-1.477.203-1.823.337-.46.179-.789.392-1.138.741a3.23 3.23 0 00-.741 1.138c-.134.346-.294.866-.337 1.823-.044.966-.054 1.262-.054 3.724v.08c0 2.462.01 2.758.054 3.724.043.957.203 1.477.337 1.823.179.46.392.789.741 1.138.346.134.866.294 1.823.337.966.044 1.262.054 3.724.054h.08c2.462 0 2.758-.01 3.724-.054.957-.043 1.477-.203 1.823-.337.46-.179.789-.392 1.138-.741.346-.346.607-.678.741-1.138.134-.346.294-.866.337-1.823.044-.966.054-1.262.054-3.724v-.08c0-2.462-.01-2.758-.054-3.724-.043-.957-.203-1.477-.337-1.823a3.23 3.23 0 00-.741-1.138 3.23 3.23 0 00-1.138-.741c-.346-.134-.866-.294-1.823-.337-.966-.044-1.262-.054-3.724-.054h-.08zM12 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zm0 1.67a4.492 4.492 0 110 8.984 4.492 4.492 0 010-8.984zm6.406-1.09a1.44 1.44 0 11-2.881 0 1.44 1.44 0 012.881 0z" clipRule="evenodd" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer>
       </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    </>
   );
 }
